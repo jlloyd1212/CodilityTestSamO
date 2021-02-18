@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7F7FCF72-B2DA-47C9-A694-034132CDFE6D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RER.FunctionalTests</RootNamespace>
+    <AssemblyName>RER.FunctionalTests</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseFolder\BaseClass.cs" />
+    <Compile Include="ComponentHelpers\BrowserHelper.cs" />
+    <Compile Include="Configurations\BrowserType.cs" />
+    <Compile Include="ComponentHelpers\MethodHelpers.cs" />
+    <Compile Include="ComponentHelpers\NavigationHelper.cs" />
+    <Compile Include="Configurations\AppConfigReader.cs" />
+    <Compile Include="Interfaces\IConfig.cs" />
+    <Compile Include="Pages\YourLogoPage.cs" />
+    <Compile Include="Pages\YourPersonalInfoPage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings\AppsConfigKeys.cs" />
+    <Compile Include="Settings\LoginUsers.cs" />
+    <Compile Include="Settings\ObjectRepository.cs" />
+    <Compile Include="StepDefinitions\OrderTShirtSteps.cs" />
+    <Compile Include="StepDefinitions\UpdateInfoSteps.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="BoDi">
+      <Version>1.4.1</Version>
+    </PackageReference>
+    <PackageReference Include="DotNetSeleniumExtras.PageObjects">
+      <Version>3.11.0</Version>
+    </PackageReference>
+    <PackageReference Include="DotNetSeleniumExtras.WaitHelpers">
+      <Version>3.11.0</Version>
+    </PackageReference>
+    <PackageReference Include="NUnit">
+      <Version>3.13.0</Version>
+    </PackageReference>
+    <PackageReference Include="Selenium.Support">
+      <Version>3.141.0</Version>
+    </PackageReference>
+    <PackageReference Include="Selenium.WebDriver">
+      <Version>3.141.0</Version>
+    </PackageReference>
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver">
+      <Version>88.0.4324.9600</Version>
+    </PackageReference>
+    <PackageReference Include="SpecFlow">
+      <Version>3.7.13</Version>
+    </PackageReference>
+    <PackageReference Include="SpecRun.Runner">
+      <Version>3.7.3</Version>
+    </PackageReference>
+    <PackageReference Include="SpecRun.SpecFlow">
+      <Version>3.7.3</Version>
+    </PackageReference>
+    <PackageReference Include="System.Configuration.ConfigurationManager">
+      <Version>5.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="WebDriverIEDriver">
+      <Version>2.45.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Default.srprofile" />
+    <None Include="Features\OrderTShirt.feature" />
+    <None Include="Features\UpdateDetails.feature" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
